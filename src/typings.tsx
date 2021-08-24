@@ -1,6 +1,4 @@
-export type TList = {
-  taskList: Array<{
+export type TList = Array<{
     id: number,
     task: string,
-  }>
-}
+}>
