@@ -4,7 +4,7 @@ import React from 'react';
 
 import './list.scss';
 
-import { TList } from '../../../typings';
+import { TList, IRemoveTask } from '../../../typings';
 
 import Task from './Task';
 
@@ -12,13 +12,14 @@ import Task from './Task';
 
 type Props = {
   taskList: TList,
+  removeTask: IRemoveTask,
 }
 
-const List = ({ taskList }: Props) => {
+const List = ({ taskList, removeTask }: Props) => {
   return (
     <div className="list">
       {taskList.map((taskItem) => (
-        <Task task={taskItem} key={taskItem.id} />
+        <Task task={taskItem} removeTask={removeTask} key={taskItem.id} />
       ))}
     </div>
   );

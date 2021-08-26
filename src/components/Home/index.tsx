@@ -35,6 +35,11 @@ const Home = () => {
     setTask('');
   };
 
+  const removeTask = (taskId: number): void => {
+    const newTaskList = taskList.filter(taskItem => taskItem.id !== taskId);
+    setTaskList(newTaskList);
+  };
+
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>): void => {
     setTask(event.target.value);
   };
@@ -52,7 +57,7 @@ const Home = () => {
             <label htmlFor="taskInput">Enter a task</label>
             <input type="text" id="taskInput" name="taskInput" value={task} onChange={onChangeHandler} onKeyDown={onKeyDownHandler}/>
           </div>
-          <List taskList={taskList} />
+          <List taskList={taskList} removeTask={removeTask} />
         </div>
       </main>
   );

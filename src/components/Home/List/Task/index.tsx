@@ -4,23 +4,27 @@ import React, { MouseEvent } from 'react';
 
 import './task.scss';
 
-import { TTask } from '../../../../typings';
+import { ITask, IRemoveTask } from '../../../../typings';
 
 import removeIcon from '../../../../images/remove.svg';
 
 // == Component
 
 type Props = {
-  task: TTask,
+  task: ITask,
+  removeTask: IRemoveTask,
 }
 
-const removeOnClickHandler = (event: MouseEvent<HTMLImageElement>) : void => {
-  console.log(event);
-};
+const Task = ({ task, removeTask }: Props) => {
+  const removeOnClickHandler = (event: MouseEvent<HTMLImageElement>) : void => {
+    const target = event.target as HTMLImageElement;
+    if (target.parentElement) {
+      removeTask(parseInt(target.parentElement.id));
+    }
+  };
 
-const Task = ({ task }: Props) => {
   return (
-    <div className="task">
+    <div id={task.id.toString()} className="task">
       <p className="taskDesc">{task.desc}</p>
       <img className="remove" src={removeIcon} alt="remove icon" title="remove task" onClick={removeOnClickHandler} />
     </div>

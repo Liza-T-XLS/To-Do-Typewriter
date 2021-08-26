@@ -3,9 +3,13 @@
 //     task: string,
 // }>
 
-export type TList = Array<TTask>;
+export type TList = Array<ITask>;
 
-export interface TTask {
+export interface ITask {
     id: number,
     desc: string,
+};
+
+export interface IRemoveTask {
+    (taskId: number): void;
 };

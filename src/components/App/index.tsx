@@ -1,6 +1,6 @@
 // == Imports
 
-import React, { FC } from 'react';
+import React from 'react';
 
 import './app.scss';
 
@@ -9,7 +9,7 @@ import Home from '../Home';
 
 // == Component
 
-const App: FC = () => {
+const App = () => {
   return (
     <div className="app">
       <Header />
