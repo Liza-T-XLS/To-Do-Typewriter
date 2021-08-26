@@ -1,4 +1,11 @@
-export type TList = Array<{
+// export type TList = Array<{
+//     id: number,
+//     task: string,
+// }>
+
+export type TList = Array<TTask>;
+
+export interface TTask {
     id: number,
-    task: string,
-}>
+    desc: string,
+};

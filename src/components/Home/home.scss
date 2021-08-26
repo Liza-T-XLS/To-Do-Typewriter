@@ -1,6 +1,31 @@
+@import '../../styles/vars';
+
 .home {
+  margin: 1rem;
   .taskInputContainer {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1.5rem;
+    label {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+@media (min-width: $tabletBreakPoint) {
+  .home {
+    margin: 3rem;
+  }
+}
+
+@media (min-width: $desktopBreakPoint) {
+  .home {
+    margin: 6rem;
+  }
+}
+
+@media (min-width: $largeDesktopBreakPoint) {
+  .home {
+    margin: 12rem;
   }
 }

@@ -6,6 +6,8 @@ import './list.scss';
 
 import { TList } from '../../../typings';
 
+import Task from './Task';
+
 // == Component
 
 type Props = {
@@ -14,15 +16,11 @@ type Props = {
 
 const List = ({ taskList }: Props) => {
   return (
-      <main>
-        <div className="list">
-          {taskList.map((taskItem) => (
-            <div className="task" key={taskItem.id}>
-              <p>{taskItem.task}</p>
-            </div>
-          ))}
-        </div>
-      </main>
+    <div className="list">
+      {taskList.map((taskItem) => (
+        <Task task={taskItem} key={taskItem.id} />
+      ))}
+    </div>
   );
 }
 

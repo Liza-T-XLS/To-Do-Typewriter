@@ -1,4 +1,15 @@
-$mainBackgroundColor: #E1E3DD;
+$mainBackgroundColor: #FBFBF8;
 $mainFontFamily: 'Special Elite', cursive;
 $mainFontColor: black;
 $mainFontSize: 14px;
+
+// filters
+
+// crimson red
+$primaryOnHoverFilter: invert(8%) sepia(93%) saturate(6512%) hue-rotate(355deg) brightness(90%) contrast(100%);
+
+// breakpoints
+
+$tabletBreakPoint: 800px;
+$desktopBreakPoint: 1000px;
+$largeDesktopBreakPoint: 1200px;

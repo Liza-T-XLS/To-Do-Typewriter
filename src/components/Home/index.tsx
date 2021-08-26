@@ -25,7 +25,7 @@ const Home = () => {
 
     const newTask = {
       id: newId,
-      task: task,
+      desc: task,
     };
     const newTaskList = [
       ...taskList,
