@@ -53,7 +53,7 @@ const Home = () => {
   };
 
   const onKeyDownHandler = (event: KeyboardEvent<HTMLInputElement>): void => {
-    if ((event.code === 'Enter' || event.code === 'NumpadEnter') && task.trim().length > 0) {
+    if ((event.code === 'Enter' || event.code === 'NumpadEnter' || event.code === '13') && task.trim().length > 0) {
       addTask(task);
     }
   };
