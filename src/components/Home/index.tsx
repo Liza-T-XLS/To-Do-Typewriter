@@ -1,6 +1,6 @@
 // == Imports
 
-import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 
 import './home.scss';
 
@@ -52,19 +52,20 @@ const Home = () => {
     setTask(event.target.value);
   };
 
-  const onKeyDownHandler = (event: KeyboardEvent<HTMLInputElement>): void => {
-    if ((event.code === 'Enter' || event.code === 'NumpadEnter' || event.code === '13') && task.trim().length > 0) {
+  const onSubmitHandler = (event: FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
+    if (task.trim().length > 0) {
       addTask(task);
     }
-  };
+  }
 
   return (
       <main>
         <div className="home">
-          <div className="taskInputContainer">
-            <label htmlFor="taskInput">Enter a task</label>
-            <input type="text" id="taskInput" name="taskInput" placeholder="Just do it" value={task} onChange={onChangeHandler} onKeyDown={onKeyDownHandler}/>
-          </div>
+            <form className="taskForm" onSubmit={onSubmitHandler}>
+              <label htmlFor="taskInput">Enter a task</label>
+              <input type="text" id="taskInput" name="taskInput" placeholder="Just do it" value={task} onChange={onChangeHandler} />
+            </form>
           <List taskList={list} taskManager={taskManager} />
           <Bin taskList={bin} taskManager={taskManager} />
         </div>
