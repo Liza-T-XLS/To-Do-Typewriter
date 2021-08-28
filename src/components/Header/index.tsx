@@ -1,15 +1,15 @@
 // == Imports
 
-import React, { FC } from 'react';
+import React from 'react';
 
 import './header.scss';
 
 // == Component
 
-const Header: FC = () => {
+const Header = () => {
   return (
       <header className="header">
-        <h1>To-Do List</h1>
+        <h1>To-Do Typewriter</h1>
       </header>
   );
 }
