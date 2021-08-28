@@ -1,4 +1,4 @@
-@import '../../../../styles/vars';
+@import '../../../styles/vars';
 
 .task {
   margin-top: 0.5rem;
@@ -8,5 +8,12 @@
   align-items: center;
   &:hover, &:active {
     filter: $primaryOnHoverFilter;
+  }
+  &.inactive {
+    text-decoration: line-through;
+  }
+  .actionIcon {
+    height: 1.2rem;
+    width: auto;
   }
 }

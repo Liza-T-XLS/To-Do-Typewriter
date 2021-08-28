@@ -8,8 +8,9 @@ export type TList = Array<ITask>;
 export interface ITask {
     id: number,
     desc: string,
+    active: boolean,
 };
 
-export interface IRemoveTask {
+export interface ITaskManager {
     (taskId: number): void;
 };

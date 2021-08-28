@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import './list.scss';
+// import './list.scss';
 
 import { TList, ITaskManager } from '../../../typings';
 
@@ -15,9 +15,9 @@ type Props = {
   taskManager: ITaskManager,
 }
 
-const List = ({ taskList, taskManager }: Props) => {
+const Bin = ({ taskList, taskManager }: Props) => {
   return (
-    <div className="list">
+    <div className="bin">
       {taskList.map((taskItem) => (
         <Task task={taskItem} taskManager={taskManager} key={taskItem.id} />
       ))}
@@ -27,4 +27,4 @@ const List = ({ taskList, taskManager }: Props) => {
 
 // == Export
 
-export default List;
+export default Bin;

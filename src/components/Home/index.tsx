@@ -5,6 +5,7 @@ import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
 import './home.scss';
 
 import List from './List';
+import Bin from './Bin';
 
 import { TList } from '../../typings';
 
@@ -26,6 +27,7 @@ const Home = () => {
     const newTask = {
       id: newId,
       desc: task,
+      active: true,
     };
     const newTaskList = [
       ...taskList,
@@ -35,10 +37,16 @@ const Home = () => {
     setTask('');
   };
 
-  const removeTask = (taskId: number): void => {
-    const newTaskList = taskList.filter(taskItem => taskItem.id !== taskId);
+  const taskManager = (taskId: number): void => {
+    const newTaskList = taskList.map(taskItem => taskItem.id === taskId ? {
+      ...taskItem,
+      active: !taskItem.active,
+    }: taskItem);
     setTaskList(newTaskList);
   };
+
+  const list = taskList.filter(taskItem => taskItem.active === true);
+  const bin = taskList.filter(taskItem => taskItem.active === false);
 
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>): void => {
     setTask(event.target.value);
@@ -55,9 +63,10 @@ const Home = () => {
         <div className="home">
           <div className="taskInputContainer">
             <label htmlFor="taskInput">Enter a task</label>
-            <input type="text" id="taskInput" name="taskInput" value={task} onChange={onChangeHandler} onKeyDown={onKeyDownHandler}/>
+            <input type="text" id="taskInput" name="taskInput" placeholder="Just do it" value={task} onChange={onChangeHandler} onKeyDown={onKeyDownHandler}/>
           </div>
-          <List taskList={taskList} removeTask={removeTask} />
+          <List taskList={list} taskManager={taskManager} />
+          <Bin taskList={bin} taskManager={taskManager} />
         </div>
       </main>
   );
