@@ -4,4 +4,8 @@ I built this project for training purposes.
 
 It is a simple to-do list.
 
+Available at: https://to-do-typewriter.netlify.app/
+
+To read the code with VS Code: https://github1s.com/Liza-T-XLS/To-Do-TypeWriter
+
 #javascript #react #typescript #scss
