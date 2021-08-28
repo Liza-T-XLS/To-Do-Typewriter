@@ -1,7 +1,10 @@
 @import '../../styles/vars';
 
 .home {
-  margin: 1rem;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
   .taskInputContainer {
     display: flex;
     flex-direction: column;
@@ -14,18 +17,23 @@
 
 @media (min-width: $tabletBreakPoint) {
   .home {
-    margin: 3rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
   }
 }
 
 @media (min-width: $desktopBreakPoint) {
   .home {
-    margin: 6rem;
+    margin-top: 4rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
   }
 }
 
 @media (min-width: $largeDesktopBreakPoint) {
   .home {
-    margin: 12rem;
+    margin-top: 4rem;
+    margin-left: 12rem;
+    margin-right: 12rem;
   }
 }
