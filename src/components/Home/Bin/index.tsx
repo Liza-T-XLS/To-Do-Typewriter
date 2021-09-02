@@ -1,8 +1,7 @@
 // == Imports
 
 import React from 'react';
-
-// import './list.scss';
+import PropTypes from 'prop-types';
 
 import { TList, ITaskManager } from '../../../typings';
 
@@ -23,6 +22,13 @@ const Bin = ({ taskList, taskManager }: Props) => {
       ))}
     </div>
   );
+}
+
+// == PropTypes
+
+Bin.propTypes = {
+  taskList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  taskManager: PropTypes.func.isRequired,
 }
 
 // == Export

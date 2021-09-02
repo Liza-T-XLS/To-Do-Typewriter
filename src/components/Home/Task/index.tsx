@@ -2,6 +2,7 @@
 
 import React, { MouseEvent } from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 import './task.scss';
 
@@ -37,6 +38,18 @@ const Task = ({ task, taskManager }: Props) => {
       <img className="actionIcon" src={icon} alt={alt} title={title} onClick={actionOnClickHandler} />
     </div>
   );
+}
+
+// == PropTypes
+
+Task.propTypes = {
+  task: PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      desc: PropTypes.string.isRequired,
+      active: PropTypes.bool.isRequired,
+    }
+  ).isRequired,
+  taskManager: PropTypes.func.isRequired,
 }
 
 // == Export

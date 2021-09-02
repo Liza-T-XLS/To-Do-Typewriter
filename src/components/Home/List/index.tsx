@@ -1,6 +1,7 @@
 // == Imports
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './list.scss';
 
@@ -23,6 +24,13 @@ const List = ({ taskList, taskManager }: Props) => {
       ))}
     </div>
   );
+}
+
+// == PropTypes
+
+List.propTypes = {
+  taskList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  taskManager: PropTypes.func.isRequired,
 }
 
 // == Export
